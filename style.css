@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.repos-container {
+    max-width: 1000px;
+    background-color: #f6f6f6;
+    margin: auto;
+}
+
+.repos-container .get-repos {
+    padding: 20px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+}
+
+.repos-container .get-repos input {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    font-size: 20px;
+    height: 54px;
+    border-radius: 8px;
+}
+
+.repos-container .get-repos input:focus {
+    outline: 2px solid #f44346;
+}
+
+.repos-container .get-repos .get-button {
+    width: 140px;
+    margin-left: 10px;
+    height: 54px;
+    background-color: #f44346;
+    color: white;
+    line-height: 54px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.repos-container .show-data {
+    padding: 40px 20px;
+    background-color: #e0e0e0;
+    position: relative;
+}
+
+.repos-container .show-data .error {
+    color: red;
+    font-size: 15px;
+
+}
+
+.repos-container .show-data .all-repos.is-hidden {
+    display: none;
+}
+
+.repos-container .show-data .all-repos .loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border-radius: 50%;
+    border: 5px solid black;
+    border-left-color: transparent;
+    animation: rotate 0.8s infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.repos-container .show-data .all-repos {
+    margin-bottom: 2rem;
+}
+
+.repos-container .show-data .all-repos>div {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.repos-container .show-data .all-repos .repo {
+    flex: 0 0 calc(25% - 1rem);
+    max-width: calc(25%- 1rem);
+    height: 100%;
+    padding: 20px 10px;
+    background: #eee;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    text-align: center;
+    box-shadow: 0 0 11px 0px #00000029;
+}
+
+@media (max-width: 992px) {
+    .repos-container .show-data .all-repos .repo {
+        flex: 0 0 calc(50% - 0.5rem);
+        max-width: calc(5%- 0.5rem);
+    }
+}
+
+@media (max-width: 567px) {
+    .repos-container .show-data .all-repos .repo {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+.repos-container .show-data .all-repos .repo .repo-title {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: capitalize;
+    margin-bottom: 0.5rem;
+    display: block;
+    white-space: nowrap;
+    width: 204px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: auto;
+}
+
+@media (max-width: 567px) {
+    .repos-container .show-data .all-repos .repo .repo-title {
+            width: 100%;
+        }
+}
+
+.repos-container .show-data .all-repos .repo .links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.repos-container .show-data .all-repos .repo .links a {
+    padding: 4px 8px;
+    background: red;
+    margin-top: 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.repos-container .show-data .load-more {
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin: auto;
+    display: block;
+    background: #f44346;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+}
+
+.repos-container .show-data .load-more.is-hidden {
+    display: none;
+}
